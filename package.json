@@ -10,6 +10,7 @@
   "dependencies": {
     "@animxyz/core": "^0.6.6",
     "sass": "^1.69.5",
+    "vite-plugin-fonts": "^0.7.0",
     "vue": "^3.3.4",
     "vue-router": "^4.2.5"
   },
