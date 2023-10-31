@@ -1,9 +1,10 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import MyNavigation from './components/organisms/TheNavigation.vue'
 import Animxyz from '@animxyz/core'
 </script>
 
 <template>
+  <MyNavigation />
   <RouterView />
 </template>
