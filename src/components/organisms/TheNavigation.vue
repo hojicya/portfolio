@@ -51,17 +51,22 @@ export default {
   font-weight: 500;
 }
 .navigation {
+  position: fixed;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
   padding: 40px 30px;
+  top: 0;
+  left: 0;
+  z-index: 999;
   &__list {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
   &__item {
-    margin: 0 20px;
+    margin: 0 2vw;
   }
 }
 </style>

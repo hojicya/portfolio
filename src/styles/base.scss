@@ -1,5 +1,5 @@
 @import "variables";
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;500;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin Sans:wght@100;300;500;800&display=swap");
 
 * {
   box-sizing: border-box;
@@ -11,7 +11,7 @@
 
 a {
   display: inline-block;
-  color: #121b51;
+  color: $font-color;
   text-decoration: none;
   cursor: pointer;
   outline: none;
@@ -20,11 +20,11 @@ a {
 body {
   width: 100%;
   background-color: $body-bg;
-  color: $fontColor;
+  color: $font-color;
   line-height: 1;
 }
 
 :root {
-  font-family: "Poppins", "Noto Sans JP", sans-serif;
+  font-family: "Josefin Sans", "Noto Sans JP", sans-serif;
   font-weight: 300;
 }

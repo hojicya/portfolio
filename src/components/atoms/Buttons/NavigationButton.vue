@@ -14,6 +14,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../../../styles/variables.scss";
+
 .link {
   position: relative;
   font-size: 18px;
@@ -26,7 +28,7 @@ export default {
     right: 0;
     bottom: 0;
     left: 0;
-    background: #e4e92e;
+    background: $accent-color;
     z-index: -1;
     transition: transform 0.3s ease;
     transform: scaleX(0);
@@ -39,6 +41,6 @@ export default {
 }
 
 .link--active {
-  background: #e4e92e;
+  background: $accent-color;
 }
 </style>
