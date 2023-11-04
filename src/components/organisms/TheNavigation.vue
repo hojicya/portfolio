@@ -57,6 +57,7 @@ export default {
   align-items: center;
   width: 100%;
   padding: 40px 30px;
+  background: rgba(255, 255, 255, 0.5);
   top: 0;
   left: 0;
   z-index: 999;
