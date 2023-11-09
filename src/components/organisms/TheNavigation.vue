@@ -35,10 +35,6 @@ export default {
           text: "Works",
           to: "/works",
         },
-        {
-          text: "Contact",
-          to: "/contact",
-        },
       ],
     };
   },
