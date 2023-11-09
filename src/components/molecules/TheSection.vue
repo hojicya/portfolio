@@ -1,6 +1,6 @@
 <template>
   <section class="section">
-    <MyTitleText>{{ heading }}</MyTitleText>
+    <MyTitleText v-if="heading">{{ heading }}</MyTitleText>
     <div class="section__contents">
       <slot />
     </div>
@@ -34,7 +34,6 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
     flex-wrap: wrap;
   }
 }

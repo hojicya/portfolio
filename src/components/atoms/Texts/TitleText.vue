@@ -6,6 +6,7 @@
 
 <style lang="scss" scoped>
 .heading {
+  margin-bottom: 50px;
   font-size: 36px;
   font-weight: 500;
   letter-spacing: 5px;
