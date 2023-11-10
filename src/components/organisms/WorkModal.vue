@@ -56,7 +56,7 @@ export default {
     width: 90%;
     margin: auto;
     padding: 120px 80px;
-    background-color: $body-bg;
+    background-color: $white;
     border-radius: 5px;
     box-shadow: 0 5px 8px rgba(0, 0, 0, 0.3);
     transition: all 0.5s ease;

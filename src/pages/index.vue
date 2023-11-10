@@ -95,7 +95,7 @@ export default {
     width: 550px;
     margin-left: 40px;
     padding: 40px;
-    border: 1px solid #000;
+    border: 1px solid $black;
     &:after {
       content: "";
       position: absolute;
@@ -103,7 +103,7 @@ export default {
       left: 20px;
       width: 100%;
       height: 100%;
-      background-color: $theme-color;
+      background-color: $light-blue;
       border: none;
       background-image: linear-gradient(
           90deg,
