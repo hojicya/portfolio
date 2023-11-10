@@ -79,10 +79,11 @@ export default {
     white-space: pre-wrap;
   }
   &__image {
-    object-fit: cover;
     width: 40%;
     height: 325px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     border-radius: 5px;
+    object-fit: cover;
   }
   &__close {
     position: absolute;

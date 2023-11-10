@@ -1,7 +1,6 @@
 <template>
   <div class="card" @click="showModal = true">
     <img v-if="workItem.image" :src="workItem.image" class="card__image" />
-    <h2 class="card__title">{{ workItem.projectName }}</h2>
   </div>
 
   <Teleport to="body">
@@ -42,10 +41,11 @@ export default {
 .card {
   text-align: center;
   &__image {
-    object-fit: cover;
     width: 100%;
-    height: 325px;
+    height: 280px;
+    box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
     border-radius: 5px;
+    object-fit: cover;
   }
   &__title {
     font-size: 18px;

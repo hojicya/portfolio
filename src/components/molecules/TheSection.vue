@@ -1,6 +1,6 @@
 <template>
   <section class="section">
-    <MyTitleText v-if="heading">{{ heading }}</MyTitleText>
+    <MySectionText v-if="sectionName">{{ sectionName }}</MySectionText>
     <div class="section__contents">
       <slot />
     </div>
@@ -8,14 +8,14 @@
 </template>
 
 <script>
-import MyTitleText from "../../components/atoms/Texts/TitleText.vue";
+import MySectionText from "../../components/atoms/Texts/SectionText.vue";
 
 export default {
   components: {
-    MyTitleText,
+    MySectionText,
   },
   props: {
-    heading: {
+    sectionName: {
       type: String,
       default: "",
     },
@@ -27,14 +27,18 @@ export default {
 @import "../../styles/variables.scss";
 
 .section {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 80px;
+  position: relative;
+  max-width: 1100px;
+  margin: 100px auto;
+  padding: 100px 90px;
+  background-color: rgba(255, 255, 255, 0.87);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  border-radius: 2px;
+  color: $font-color;
+  z-index: 10;
   &__contents {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+    margin-top: 80px;
   }
 }
 </style>

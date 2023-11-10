@@ -1,15 +1,20 @@
 <template>
-  <h2 class="heading">
-    <slot />
-  </h2>
+  <h3 v-if="titleName" class="title">{{ titleName }}</h3>
 </template>
 
+<script>
+export default {
+  props: {
+    titleName: {
+      type: String,
+      default: "",
+    },
+  },
+};
+</script>
+
 <style lang="scss" scoped>
-.heading {
-  margin-bottom: 50px;
-  font-size: 36px;
-  font-weight: 500;
-  letter-spacing: 5px;
-  text-align: center;
+.title {
+  font-size: 26px;
 }
 </style>
