@@ -7,10 +7,6 @@
 <script>
 export default {
   props: {
-    image: {
-      type: String,
-      default: "",
-    },
     text: {
       type: String,
       default: "",
@@ -21,11 +17,9 @@ export default {
 
 <style lang="scss" scoped>
 .label {
+  display: inline-block;
+  padding: 8px 20px;
   border: 2px solid #000;
   border-radius: 6px;
-  padding: 8px 20px;
-  & + .label {
-    margin-left: 10px;
-  }
 }
 </style>

@@ -1,13 +1,12 @@
 <template>
   <nav class="navigation">
-    <h1 class="header">hojicya's portfolio</h1>
     <ul class="navigation__list">
       <li
-        v-for="(item, i) in navigation_items"
+        v-for="(navigationItem, i) in navigationItems"
         :key="i"
         class="navigation__item"
       >
-        <MyNavigationButton :text="item.text" :to="item.to" />
+        <MyNavigationButton :navigationItem="navigationItem" />
       </li>
     </ul>
   </nav>
@@ -22,18 +21,18 @@ export default {
   },
   data() {
     return {
-      navigation_items: [
+      navigationItems: [
         {
           text: "Top",
-          to: "/",
+          scroll: "#top",
         },
         {
           text: "About",
-          to: "/about",
+          scroll: "#about",
         },
         {
           text: "Works",
-          to: "/works",
+          scroll: "#works",
         },
       ],
     };
@@ -49,10 +48,10 @@ export default {
 .navigation {
   position: fixed;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   width: 100%;
-  padding: 40px 30px;
+  padding: 30px 30px;
   background: rgba(255, 255, 255, 0.5);
   top: 0;
   left: 0;
