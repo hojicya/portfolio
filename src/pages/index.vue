@@ -1,7 +1,7 @@
 <template>
-  <MyMainVisualText />
+  <MyMainVisualText id="top" />
 
-  <MySection sectionName="About">
+  <MySection id="about" sectionName="About">
     <MyTitleText titleName="Profile" />
     <div class="profile">
       <img src="../assets/profile.jpg" class="profile__image" />
@@ -24,7 +24,7 @@
     </ul>
   </MySection>
 
-  <MySection sectionName="Works">
+  <MySection id="works" sectionName="Works">
     <ul class="works">
       <li v-for="(workItem, key) in workItems" :key="key" class="works__item">
         <MyWorkCard :workItem="workItem" />
@@ -86,12 +86,14 @@ export default {
   align-items: center;
   margin-top: 20px;
   &__image {
-    width: 300px;
+    max-width: 300px;
+    width: 30vw;
     border-radius: 5px;
   }
   &__textbox {
     position: relative;
     width: 550px;
+    margin-left: 40px;
     padding: 40px;
     border: 1px solid #000;
     &:after {
@@ -126,6 +128,7 @@ export default {
 .skills {
   display: flex;
   margin-top: 20px;
+  flex-wrap: wrap;
   &__title {
     margin-top: 80px;
   }
@@ -136,11 +139,11 @@ export default {
 
 .works {
   display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  row-gap: 20px;
   width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: 20px;
   &__item {
     width: calc(100% / 2 - 20px);
     cursor: pointer;

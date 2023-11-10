@@ -1,13 +1,23 @@
 <template>
-  <router-link class="link" active-class="link--active">{{ text }}</router-link>
+  <a
+    class="link"
+    :href="navigationItem.scroll"
+    v-smooth-scroll="{
+      duration: 1000,
+      offset: -100,
+      updateHistory: false,
+    }"
+  >
+    {{ navigationItem.text }}
+  </a>
 </template>
 
 <script>
 export default {
   props: {
-    text: {
-      type: String,
-      default: "",
+    navigationItem: {
+      type: Object,
+      default: () => {},
     },
   },
 };
@@ -18,7 +28,7 @@ export default {
 
 .link {
   position: relative;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
   &::before {
     content: " ";
@@ -38,9 +48,5 @@ export default {
     transform: scaleX(1);
     transform-origin: bottom left;
   }
-}
-
-.link--active {
-  background: $accent-color;
 }
 </style>
