@@ -61,6 +61,7 @@ export default {
   &__container {
     position: relative;
     width: 90%;
+    max-width: 120rem;
     margin: auto;
     background-color: $white;
     border-radius: 5px;

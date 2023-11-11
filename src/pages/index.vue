@@ -3,7 +3,7 @@
 
   <MySection id="about" sectionName="About">
     <MyTitleText titleName="Profile" />
-    <div class="profile">
+    <div class="profile section__item">
       <img src="../assets/profile.jpg" class="profile__image" />
       <div class="profile__textbox">
         <p class="profile__name">志村 美幸 / Miyuki Shimura</p>
@@ -16,8 +16,8 @@
         </div>
       </div>
     </div>
-    <MyTitleText titleName="Skills" class="skills__title" />
-    <ul class="skills">
+    <MyTitleText titleName="Skills" class="section__title" />
+    <ul class="skills section__item">
       <li v-for="(skill, key) in skills" :key="key" class="skills__item">
         <MySkillLabel :text="skill" />
       </li>
@@ -81,8 +81,21 @@ export default {
 @import "../styles/variables.scss";
 @import "../styles/mixins.scss";
 
+.section {
+  &__item {
+    margin-top: 2rem;
+  }
+  &__title {
+    @include tab {
+      margin-top: 8rem;
+    }
+    @include sp {
+      margin-top: 4rem;
+    }
+  }
+}
+
 .profile {
-  margin-top: 2rem;
   @include tab {
     display: flex;
     justify-content: space-between;
@@ -142,26 +155,22 @@ export default {
       font-size: 2rem;
     }
     @include sp {
-      font-size: 1.6rem;
+      font-size: 1.4rem;
     }
   }
   &__information {
-    margin-top: 2rem;
+    @include tab {
+      margin-top: 2rem;
+    }
+    @include sp {
+      margin-top: 1rem;
+    }
   }
 }
 
 .skills {
   display: flex;
-  margin-top: 2rem;
   flex-wrap: wrap;
-  &__title {
-    @include tab {
-      margin-top: 8rem;
-    }
-    @include sp {
-      margin-top: 4rem;
-    }
-  }
   &__item {
     @include tab {
       margin-right: 1rem;
