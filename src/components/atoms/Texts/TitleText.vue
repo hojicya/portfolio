@@ -22,7 +22,7 @@ export default {
     font-size: 2.6rem;
   }
   @include sp {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 }
 </style>

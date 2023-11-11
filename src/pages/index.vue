@@ -3,7 +3,7 @@
 
   <MySection id="about" sectionName="About">
     <MyTitleText titleName="Profile" />
-    <div class="profile">
+    <div class="profile section__item">
       <img src="../assets/profile.jpg" class="profile__image" />
       <div class="profile__textbox">
         <p class="profile__name">志村 美幸 / Miyuki Shimura</p>
@@ -16,10 +16,16 @@
         </div>
       </div>
     </div>
-    <MyTitleText titleName="Skills" class="skills__title" />
-    <ul class="skills">
+    <MyTitleText titleName="Skills" class="section__title" />
+    <ul class="skills section__item">
       <li v-for="(skill, key) in skills" :key="key" class="skills__item">
         <MySkillLabel :text="skill" />
+      </li>
+    </ul>
+    <MyTitleText titleName="Links" class="section__title" />
+    <ul class="section__item">
+      <li v-for="(linkItem, key) in linkItems" :key="key" class="links__item">
+        <MyLinkIcon :linkItem="linkItem" />
       </li>
     </ul>
   </MySection>
@@ -34,10 +40,12 @@
 
   <MyBackgroundCircle />
 </template>
+
 <script>
 import MyMainVisualText from "../components/atoms/Texts/MainVisualText.vue";
 import MyTitleText from "../components/atoms/Texts/TitleText.vue";
 import MySkillLabel from "../components/atoms/Labels/SmallLabel.vue";
+import MyLinkIcon from "../components/atoms/Links/LinkIcon.vue";
 import MySection from "../components/molecules/TheSection.vue";
 import MyWorkCard from "../components/molecules/WorkCard.vue";
 import MyBackgroundCircle from "../components/organisms/BackgroundCircle.vue";
@@ -47,6 +55,7 @@ export default {
     MyMainVisualText,
     MyTitleText,
     MySkillLabel,
+    MyLinkIcon,
     MySection,
     MyWorkCard,
     MyBackgroundCircle,
@@ -73,6 +82,13 @@ export default {
         "Firebase",
         "Git",
       ],
+      linkItems: [
+        {
+          text: "Github",
+          href: "https://github.com/hojicya",
+          image: "icon-github.svg",
+        },
+      ],
     };
   },
 };
@@ -81,8 +97,21 @@ export default {
 @import "../styles/variables.scss";
 @import "../styles/mixins.scss";
 
+.section {
+  &__item {
+    margin-top: 2rem;
+  }
+  &__title {
+    @include tab {
+      margin-top: 8rem;
+    }
+    @include sp {
+      margin-top: 4rem;
+    }
+  }
+}
+
 .profile {
-  margin-top: 2rem;
   @include tab {
     display: flex;
     justify-content: space-between;
@@ -107,7 +136,7 @@ export default {
     }
     @include sp {
       width: 100%;
-      margin-top: 1rem;
+      margin-top: 2rem;
       padding: 2rem;
     }
     &:after {
@@ -142,32 +171,39 @@ export default {
       font-size: 2rem;
     }
     @include sp {
-      font-size: 1.6rem;
+      font-size: 1.4rem;
     }
   }
   &__information {
-    margin-top: 2rem;
+    @include tab {
+      margin-top: 2rem;
+    }
+    @include sp {
+      margin-top: 1rem;
+    }
   }
 }
 
 .skills {
   display: flex;
-  margin-top: 2rem;
   flex-wrap: wrap;
-  &__title {
-    @include tab {
-      margin-top: 8rem;
-    }
-    @include sp {
-      margin-top: 4rem;
-    }
-  }
   &__item {
     @include tab {
       margin-right: 1rem;
     }
     @include sp {
       margin-right: 1rem;
+    }
+  }
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  &__item {
+    display: inline-block;
+    + .links__item {
+      margin-top: 1rem;
     }
   }
 }
