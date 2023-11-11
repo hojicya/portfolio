@@ -56,7 +56,7 @@ export default {
       workItems: [
         {
           projectName: "hojicya's portfolio",
-          image: "src/assets/portfolio.png",
+          image: "portfolio.png",
           desc:
             "Vue.jsを使用したこのポートフォリオサイトです。\n友人から見た自分のイメージカラーを聞き、水色と白が基調のシンプルなデザインにしました。\n完成形ではなく、デザインの見直しや、まだまだ追加したいものがたくさんあるので随時アップデートしています。",
           skills: "HTML / CSS / Vue.js / Kinesis",

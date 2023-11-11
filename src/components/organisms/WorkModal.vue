@@ -2,7 +2,7 @@
   <Transition name="modal">
     <div v-if="show" class="modal__mask">
       <div class="modal__container">
-        <img v-if="workItem.image" :src="workItem.image" class="modal__image" />
+        <img v-if="workItem.image" :src="imageSrc" class="modal__image" />
 
         <div class="modal__container--text">
           <h2 class="modal__projectname">{{ workItem.projectName }}</h2>
@@ -31,6 +31,12 @@ export default {
     workItem: {
       type: Object,
       default: () => {},
+    },
+  },
+  computed: {
+    imageSrc() {
+      return new URL(`../../assets/${this.workItem.image}`, import.meta.url)
+        .href;
     },
   },
 };
