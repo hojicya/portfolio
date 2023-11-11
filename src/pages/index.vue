@@ -22,6 +22,12 @@
         <MySkillLabel :text="skill" />
       </li>
     </ul>
+    <MyTitleText titleName="Links" class="section__title" />
+    <ul class="section__item">
+      <li v-for="(linkItem, key) in linkItems" :key="key" class="links__item">
+        <MyLinkIcon :linkItem="linkItem" />
+      </li>
+    </ul>
   </MySection>
 
   <MySection id="works" sectionName="Works">
@@ -34,10 +40,12 @@
 
   <MyBackgroundCircle />
 </template>
+
 <script>
 import MyMainVisualText from "../components/atoms/Texts/MainVisualText.vue";
 import MyTitleText from "../components/atoms/Texts/TitleText.vue";
 import MySkillLabel from "../components/atoms/Labels/SmallLabel.vue";
+import MyLinkIcon from "../components/atoms/Links/LinkIcon.vue";
 import MySection from "../components/molecules/TheSection.vue";
 import MyWorkCard from "../components/molecules/WorkCard.vue";
 import MyBackgroundCircle from "../components/organisms/BackgroundCircle.vue";
@@ -47,6 +55,7 @@ export default {
     MyMainVisualText,
     MyTitleText,
     MySkillLabel,
+    MyLinkIcon,
     MySection,
     MyWorkCard,
     MyBackgroundCircle,
@@ -72,6 +81,13 @@ export default {
         "Vuetify",
         "Firebase",
         "Git",
+      ],
+      linkItems: [
+        {
+          text: "Github",
+          href: "https://github.com/hojicya",
+          image: "icon-github.svg",
+        },
       ],
     };
   },
@@ -177,6 +193,17 @@ export default {
     }
     @include sp {
       margin-right: 1rem;
+    }
+  }
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  &__item {
+    display: inline-block;
+    + .links__item {
+      margin-top: 1rem;
     }
   }
 }
