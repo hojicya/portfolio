@@ -21,6 +21,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import "../../../styles/variables.scss";
+@import "../../../styles/mixins.scss";
 
 .mainvisual {
   width: 100vw;
@@ -36,13 +37,22 @@ export default {
     z-index: 100;
   }
   &__title {
-    font-size: 5vw;
     font-weight: 500;
     color: $font-color;
-    letter-spacing: 1vw;
+    @include tab {
+      font-size: 7.4rem;
+      letter-spacing: 1.4rem;
+    }
+    @include sp {
+      font-size: 3.4rem;
+      letter-spacing: 1rem;
+    }
   }
   &__supplement {
-    margin-top: 20px;
+    margin-top: 2rem;
+    @include tab {
+      font-size: 1.8rem;
+    }
   }
 }
 </style>

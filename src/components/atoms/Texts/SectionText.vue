@@ -5,12 +5,20 @@
 </template>
 
 <style lang="scss" scoped>
+@import "../../../styles/variables.scss";
+@import "../../../styles/mixins.scss";
+
 .section {
   &__title {
-    font-size: 36px;
     font-weight: 500;
-    letter-spacing: 5px;
-    text-align: center;
+    @include tab {
+      font-size: 3.6rem;
+      letter-spacing: 0.2rem;
+    }
+    @include sp {
+      font-size: 2.4rem;
+      letter-spacing: 0.2rem;
+    }
   }
 }
 </style>

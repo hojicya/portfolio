@@ -59,7 +59,7 @@ export default {
           image: "src/assets/portfolio.png",
           desc:
             "Vue.jsを使用したこのポートフォリオサイトです。\n友人から見た自分のイメージカラーを聞き、水色と白が基調のシンプルなデザインにしました。\n完成形ではなく、デザインの見直しや、まだまだ追加したいものがたくさんあるので随時アップデートしています。",
-          skills: "HTML / CSS / Vue.js / kinesis",
+          skills: "HTML / CSS / Vue.js / Kinesis",
         },
       ],
       skills: [
@@ -79,28 +79,40 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import "../styles/variables.scss";
+@import "../styles/mixins.scss";
 
 .profile {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 20px;
+  margin-top: 2rem;
+  @include tab {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
   &__image {
-    max-width: 300px;
-    width: 30vw;
     border-radius: 5px;
+    @include tab {
+      width: 25rem;
+    }
+    @include sp {
+      width: 12rem;
+    }
   }
   &__textbox {
     position: relative;
-    width: 550px;
-    margin-left: 40px;
-    padding: 40px;
     border: 1px solid $black;
+    @include tab {
+      width: 60rem;
+      margin-left: 4rem;
+      padding: 4rem;
+    }
+    @include sp {
+      width: 100%;
+      margin-top: 1rem;
+      padding: 2rem;
+    }
     &:after {
       content: "";
       position: absolute;
-      top: 15px;
-      left: 20px;
       width: 100%;
       height: 100%;
       background-color: $light-blue;
@@ -111,42 +123,75 @@ export default {
           transparent 50%
         ),
         linear-gradient(rgba(255, 255, 255, 0.3) 50%, transparent 50%);
-      background-size: 30px 30px;
+      background-size: 3rem 3rem;
       opacity: 0.5;
       z-index: -1;
+      @include tab {
+        top: 1.5rem;
+        left: 2rem;
+      }
+      @include sp {
+        top: 0.75rem;
+        left: 1rem;
+      }
     }
   }
   &__name {
-    font-size: 20px;
     font-weight: 300;
+    @include tab {
+      font-size: 2rem;
+    }
+    @include sp {
+      font-size: 1.6rem;
+    }
   }
   &__information {
-    margin-top: 20px;
+    margin-top: 2rem;
   }
 }
 
 .skills {
   display: flex;
-  margin-top: 20px;
+  margin-top: 2rem;
   flex-wrap: wrap;
   &__title {
-    margin-top: 80px;
+    @include tab {
+      margin-top: 8rem;
+    }
+    @include sp {
+      margin-top: 4rem;
+    }
   }
   &__item {
-    margin-right: 10px;
+    @include tab {
+      margin-right: 1rem;
+    }
+    @include sp {
+      margin-right: 1rem;
+    }
   }
 }
 
 .works {
-  display: flex;
   width: 100%;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  row-gap: 20px;
+  @include tab {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 2rem;
+  }
   &__item {
-    width: calc(100% / 2 - 20px);
-    cursor: pointer;
+    @include tab {
+      width: calc(100% / 2 - 2rem);
+      cursor: pointer;
+    }
+    @include sp {
+      width: 100%;
+      + .works__item {
+        margin-top: 1.5rem;
+      }
+    }
   }
 }
 </style>

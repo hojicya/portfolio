@@ -1,4 +1,4 @@
-@import "variables";
+@import "variables", "mixins";
 @import url("https://fonts.googleapis.com/css2?family=Josefin Sans:wght@100;300;500;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Zen Kaku Gothic New:wght@100;300;500;800&display=swap");
 
@@ -25,12 +25,36 @@ body {
   line-height: 1;
   p {
     font-family: "Josefin Sans", "Zen Kaku Gothic New", sans-serif;
-    line-height: 24px;
+    @include tab {
+      font-size: 1.6rem;
+      line-height: 2.6rem;
+    }
+    @include sp {
+      font-size: 1.2rem;
+      line-height: 2rem;
+    }
   }
 }
 
 :root {
   font-family: "Josefin Sans", "Zen Kaku Gothic New", sans-serif;
-  line-height: 24px;
   font-weight: 300;
+  @include tab {
+    line-height: 2.6rem;
+  }
+  @include sp {
+    line-height: 2rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  html {
+    font-size: calc(100vw / 128) !important;
+  }
+}
+
+@include sp {
+  html {
+    font-size: calc(100vw / 37.5) !important;
+  }
 }

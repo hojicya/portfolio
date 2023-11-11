@@ -14,7 +14,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../../../styles/variables.scss";
+@import "../../../styles/mixins.scss";
+
 .title {
-  font-size: 26px;
+  @include tab {
+    font-size: 2.6rem;
+  }
+  @include sp {
+    font-size: 2rem;
+  }
 }
 </style>
