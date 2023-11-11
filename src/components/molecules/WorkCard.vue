@@ -1,6 +1,6 @@
 <template>
   <div class="card" @click="showModal = true">
-    <img v-if="workItem.image" :src="workItem.image" class="card__image" />
+    <img v-if="workItem.image" :src="imageSrc" class="card__image" />
   </div>
 
   <Teleport to="body">
@@ -33,6 +33,12 @@ export default {
     return {
       showModal: false,
     };
+  },
+  computed: {
+    imageSrc() {
+      return new URL(`../../assets/${this.workItem.image}`, import.meta.url)
+        .href;
+    },
   },
 };
 </script>
