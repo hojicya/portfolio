@@ -14,9 +14,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
 .footer {
-  text-align: right;
-  padding: 60px 100px;
-  font-size: 14px;
+  text-align: center;
+  @include tab {
+    padding: 10rem 10rem 6rem;
+    font-size: 1.4rem;
+  }
+  @include sp {
+    padding: 10rem 0 4rem;
+    font-size: 1rem;
+  }
 }
 </style>

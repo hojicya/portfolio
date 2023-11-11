@@ -38,17 +38,25 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
 .card {
   text-align: center;
   &__image {
     width: 100%;
-    height: 280px;
     box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
     border-radius: 5px;
     object-fit: cover;
+    @include tab {
+      height: 28rem;
+    }
+    @include sp {
+      height: 14rem;
+    }
   }
   &__title {
-    font-size: 18px;
+    font-size: 1.8rem;
   }
 }
 </style>
