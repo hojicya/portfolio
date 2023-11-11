@@ -14,7 +14,7 @@
         </div>
 
         <button class="modal__close" @click="$emit('close')">
-          <img src="src/assets/icon-close.svg" />
+          <img src="../../assets/icon-close.svg" />
         </button>
       </div>
     </div>
