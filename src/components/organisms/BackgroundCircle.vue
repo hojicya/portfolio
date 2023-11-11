@@ -13,6 +13,14 @@
         :strength="10"
         type="depth"
       />
+    </kinesis-container>
+    <div class="stick stick--one">*</div>
+    <div class="stick stick--two">*</div>
+    <div class="stick stick--three">*</div>
+  </div>
+
+  <div class="background background__inner">
+    <kinesis-container class="background__content">
       <kinesis-element
         class="circle circle--four"
         :strength="20"
@@ -47,6 +55,15 @@ export default {
 <style lang="scss" scoped>
 @import "../../styles/variables.scss";
 
+@keyframes rotate_animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .background {
   position: fixed;
   top: 0;
@@ -55,10 +72,38 @@ export default {
   height: 100vh;
   text-align: center;
   overflow: hidden;
+  &__inner {
+    pointer-events: none;
+    z-index: 100;
+  }
   &__content {
     position: relative;
     width: 100%;
     height: 100%;
+  }
+}
+
+.stick {
+  position: absolute;
+  display: inline-block;
+  opacity: 0.5;
+  &--one {
+    top: 30vh;
+    left: 50vh;
+    font-size: 3em;
+    animation: rotate_animation 10s linear infinite;
+  }
+  &--two {
+    bottom: 24vh;
+    right: 27vh;
+    font-size: 3em;
+    animation: rotate_animation 14s linear infinite;
+  }
+  &--three {
+    bottom: 21vh;
+    left: 24vh;
+    font-size: 3em;
+    animation: rotate_animation 8s linear infinite;
   }
 }
 
@@ -79,7 +124,6 @@ export default {
     border: 20px solid $light-blue;
     bottom: 11vh;
     left: 28vh;
-    opacity: 0.3 !important;
   }
   &--three {
     width: 50vw;
@@ -96,11 +140,11 @@ export default {
     right: 45vh;
   }
   &--five {
-    width: 6vw;
-    height: 6vw;
-    border: 2px solid $light-blue;
-    top: 27vh;
-    left: 50vh;
+    width: 5vw;
+    height: 5vw;
+    border: 3px solid $light-blue;
+    top: 10rem;
+    right: 3rem;
   }
   &--six {
     width: 6vw;
@@ -112,9 +156,9 @@ export default {
   &--seven {
     width: 2vw;
     height: 2vw;
-    border: 1px solid $light-blue;
-    bottom: 33vh;
-    right: 17vh;
+    border: 2px solid #99d7db;
+    bottom: 28vh;
+    right: 12vh;
   }
 }
 </style>
