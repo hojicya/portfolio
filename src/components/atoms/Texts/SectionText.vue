@@ -10,6 +10,7 @@
 
 .section {
   &__title {
+    border-bottom: dashed 1px #2e2e2e;
     font-weight: 500;
     @include tab {
       font-size: 3.6rem;

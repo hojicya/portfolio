@@ -136,7 +136,7 @@ export default {
     }
     @include sp {
       width: 100%;
-      margin-top: 1rem;
+      margin-top: 2rem;
       padding: 2rem;
     }
     &:after {
